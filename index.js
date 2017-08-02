@@ -1,6 +1,6 @@
-const discord = require('discord.js')
-const client = new discord.Client()
-var bmercy = {
+const { Client } = require('discord.js')
+const client = new Client()
+let bmercy = {
     token: "",
     status: 0
 }
@@ -29,11 +29,12 @@ function ban(id, guildid){
         throw new Error("No Token found")
         
     } else {
-        if(bmercy.status === 1) return new Error("Status = 1 meaning Token is not correct")
-        if(!client.users.get(id)) return new Error("User ID is not defined")
-        if(!client.guilds.get(guildid)) return new Error("Guild ID is not defined")
-            client.guilds.get(guildid).member(id).ban()
-            console.log("BANNE " + client.users.get(id).tag + " FROM " + client.guilds.get(guildid).name + "!!!!")
+        if(bmercy.status === 1) return new Error("Status = 1 meaning Token is not correct!")
+        if(!id) return new Error("User ID is not defined!")
+        if(!client.guilds.get(guildid)) return new Error("I am not in this guild!")
+        if(!client.guilds.get(guildid).members.get(id).bannable) return new Error('I don\'t have permission to ban this user!')
+        client.guilds.get(guildid).member(id).ban()
+        console.log("BANNE " + client.users.get(id).tag + " FROM " + client.guilds.get(guildid).name + "!!!!")
     }
 
 }
