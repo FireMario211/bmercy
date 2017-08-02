@@ -1,0 +1,11 @@
+{
+  "name": "bmercy",
+  "version": "1.0.0",
+  "description": "A node module where you can ban people instead of using discord.js' ban",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "11.1.0"
+  },
+  "author": "FireMario211",
+  "license": "MIT"
+}
