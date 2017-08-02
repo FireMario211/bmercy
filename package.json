@@ -6,6 +6,10 @@
   "dependencies": {
     "discord.js": "11.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FireMario211/bmercy.git 
+  },
   "author": "FireMario211",
   "license": "MIT"
 }
